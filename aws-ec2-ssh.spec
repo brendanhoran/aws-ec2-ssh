@@ -12,7 +12,7 @@ Group: System/Administration
 License: MIT
 URL: https://github.com/brendanhoran/aws-ec2-ssh
 Source0: v%{version}.tar.gz
-Source1: import_users
+Source1: aws-ec2-ssh
 Source2: sshd_config
 BuildArch: noarch
 Packager: Brendan Horan
@@ -46,7 +46,7 @@ install -m 600 %{SOURCE1} ${RPM_BUILD_ROOT}%{_sysconfdir}/cron.d
 %attr(700,root,root) %{_bindir}/import_users.sh
 %attr(700,root,root) %{_bindir}/authorized_keys_command.sh
 %config %{_sysconfdir}/aws-ec2-ssh.conf
-%config %{_sysconfdir}/cron.d/import_users
+%config %{_sysconfdir}/cron.d/aws-ec2-ssh
 
 
 %changelog
